@@ -19,6 +19,17 @@
   }
 }
 
+/* 인쇄 시 용지 여백 (인쇄용 PDF 페이지 너비는 pdf-viewer.tsx 의 PRINT_PAGE_WIDTH 기준) */
+@page {
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
