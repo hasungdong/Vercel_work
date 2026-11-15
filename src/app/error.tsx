@@ -12,6 +12,10 @@ export default function Error({ error, retry }: { error: unknown; retry: () => v
     <main className="flex flex-1 flex-col items-center justify-center gap-4 p-8 text-center">
       <h2 className="text-2xl font-semibold">문제가 발생했습니다</h2>
       <p className="text-sm opacity-70">잠시 후 다시 시도해 주세요.</p>
+      {/* 임시 진단용: 모바일 원인 확인 후 제거 */}
+      <p className="text-xs break-all opacity-50">
+        {String((error as { message?: string })?.message ?? error)}
+      </p>
       <button
         type="button"
         onClick={() => retry()}

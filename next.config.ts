@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
   turbopack: {
+    // 구버전 모바일 브라우저 호환을 위해 pdf.js 메인 스레드 코드도 legacy 빌드를 사용합니다.
+    resolveAlias: {
+      "pdfjs-dist": "pdfjs-dist/legacy/build/pdf.mjs",
+    },
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],

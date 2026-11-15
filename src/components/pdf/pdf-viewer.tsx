@@ -7,7 +7,7 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 
 // workerSrc 는 react-pdf 컴포넌트를 렌더링하는 같은 모듈에서 설정해야 합니다.
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
+  "pdfjs-dist/legacy/build/pdf.worker.min.mjs",
   import.meta.url,
 ).toString();
 
